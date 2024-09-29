@@ -1,11 +1,25 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from "./app.module.css";
+import * as React from "react";
+import { Link, Route, Routes } from "react-router-dom";
 
 export function App() {
 	return (
-		<div>
-			<h1>Welcome</h1>
-		</div>
+		<React.Suspense fallback={null}>
+			<ul>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+			</ul>
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<>
+							<h1>Hello World</h1>
+						</>
+					}
+				/>
+			</Routes>
+		</React.Suspense>
 	);
 }
 
